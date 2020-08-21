@@ -1,0 +1,7 @@
+{
+  "name": "busmart-project",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

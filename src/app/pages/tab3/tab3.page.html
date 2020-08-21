@@ -1,0 +1,98 @@
+<app-header></app-header>
+<ion-content fullscreen>
+  <ion-card>
+    <img src="../../assets/cars.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle>Semaforización</ion-card-subtitle>
+      <ion-card-title>Quito</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+     La ciudad de Quito está en estado de semaforización color "Amarillo" asignado por el COE. Escoja la fecha y compruebe si su vehículo puede circular.  
+    </ion-card-content>
+  </ion-card>
+  
+
+ <ion-list>
+  <ion-list-header>
+    <ion-label color="danger" class="letra">Fecha</ion-label>
+    <ion-item>
+       <ion-datetime [(ngModel)]="dia" placeholder="Escoja la fecha" displayFormat="DDD  DD de MMM, YYYY" monthShortNames="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre" dayShortNames="Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado"></ion-datetime>
+    </ion-item>
+    
+    
+  </ion-list-header> 
+   <!-- Listo--> 
+  <ion-item> 
+<ion-label color="primary" position="floating" >Ingrese la placa del vehículo</ion-label>
+<ion-input type="text" minlength="7" maxlength="7" [(ngModel)]="placa" required></ion-input> 
+
+  <div *ngIf="((placa | slice: '-1') === '2')  && 
+  ((dia | date: 'fullDate' | slice:0:2)=== 'Tu' || 
+  (dia | date: 'fullDate' | slice:0:2)=== 'Th' ||
+  (dia | date: 'fullDate' | slice:0:2)=== 'Sa' )">
+  <div class="restriccion"> Sin restricción, puede circular</div>
+
+</div> 
+
+  <div *ngIf="((placa | slice: '-1') === '4')  && 
+  ((dia | date: 'fullDate' | slice:0:2)=== 'Tu' || 
+  (dia | date: 'fullDate' | slice:0:2)=== 'Th' ||
+  (dia | date: 'fullDate' | slice:0:2)=== 'Sa' )">
+  <div class="restriccion"> Sin restricción, puede circular</div>
+
+
+  </div> 
+  <div *ngIf="((placa | slice: '-1') === '6')  && 
+  ((dia | date: 'fullDate' | slice:0:2)=== 'Tu' || 
+  (dia | date: 'fullDate' | slice:0:2)=== 'Th' ||
+  (dia | date: 'fullDate' | slice:0:2)=== 'Sa' )">
+  <div class="restriccion"> Sin restricción, puede circular</div>
+  </div> 
+  <div *ngIf="((placa | slice: '-1') === '8')  && 
+  ((dia | date: 'fullDate' | slice:0:2)=== 'Tu' || 
+  (dia | date: 'fullDate' | slice:0:2)=== 'Th' ||
+  (dia | date: 'fullDate' | slice:0:2)=== 'Sa' )">
+  <div class="restriccion"> Sin restricción, puede circular</div>
+  </div> 
+  <div *ngIf="((placa | slice: '-1') === '0')  && 
+  ((dia | date: 'fullDate' | slice:0:2)=== 'Tu' || 
+  (dia | date: 'fullDate' | slice:0:2)=== 'Th' ||
+  (dia | date: 'fullDate' | slice:0:2)=== 'Sa' )">
+  <div class="restriccion"> Sin restricción, puede circular</div>
+  </div> 
+<!-- Placa Impar-->
+<div *ngIf="((placa | slice: '-1') === '1')  && 
+  ((dia | date: 'fullDate' | slice:0:2)=== 'Mo' || 
+  (dia | date: 'fullDate' | slice:0:2)=== 'We' ||
+  (dia | date: 'fullDate' | slice:0:2)=== 'Fr' )">
+  <div class="restriccion"> Sin restricción, puede circular</div>
+  </div> 
+  <div *ngIf="((placa | slice: '-1') === '3')  && 
+  ((dia | date: 'fullDate' | slice:0:2)=== 'Mo' || 
+  (dia | date: 'fullDate' | slice:0:2)=== 'We' ||
+  (dia | date: 'fullDate' | slice:0:2)=== 'Fr' )">
+  <div class="restriccion"> Sin restricción, puede circular</div>
+  </div>
+  <div *ngIf="((placa | slice: '-1') === '5')  && 
+  ((dia | date: 'fullDate' | slice:0:2)=== 'Mo' || 
+  (dia | date: 'fullDate' | slice:0:2)=== 'We' ||
+  (dia | date: 'fullDate' | slice:0:2)=== 'Fr' )">
+  <div class="restriccion"> Sin restricción, puede circular</div>
+  </div>
+  <div *ngIf="((placa | slice: '-1') === '7')  && 
+  ((dia | date: 'fullDate' | slice:0:2)=== 'Mo' || 
+  (dia | date: 'fullDate' | slice:0:2)=== 'We' ||
+  (dia | date: 'fullDate' | slice:0:2)=== 'Fr' )">
+  <div class="restriccion"> Sin restricción, puede circular</div>
+  </div>
+  <div *ngIf="((placa | slice: '-1') === '9')  && 
+  ((dia | date: 'fullDate' | slice:0:2)=== 'Mo' || 
+  (dia | date: 'fullDate' | slice:0:2)=== 'We' ||
+  (dia | date: 'fullDate' | slice:0:2)=== 'Fr' )">
+  <div class="restriccion"> Sin restricción, puede circular</div>
+  </div>
+  
+</ion-item>
+  </ion-list>
+  
+</ion-content>
